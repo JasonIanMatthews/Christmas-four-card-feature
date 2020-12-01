@@ -1,0 +1,358 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Codystar:wght@300;400&display=swap");
+
+:root {
+	--red: hsl(0, 78%, 62%);
+	--cyan: hsl(180, 62%, 55%);
+	--orange: hsl(34, 97%, 64%);
+	--blue: hsl(212, 86%, 64%);
+	--very-dark-blue: hsl(234, 12%, 34%);
+	--grayish-blue: hsl(229, 6%, 66%);
+	--very-light-gray: hsl(0, 0%, 98%);
+	--background: #c0c0c0;
+	--backgroundShadow: 1px 6px 15px rgba(0, 0, 0, 0.3);
+	--textshadow: 1px 1px 5px rgba(255, 255, 255, 0.1);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 15px;
+}
+
+body {
+	font-family: 'Poppins';
+	text-align: center;
+	background: linear-gradient(180deg, rgba(23, 112, 130, 1) 0%, rgba(0, 184, 242, 1) 100%);
+	background-attachment: fixed;
+	height: 100vh;
+}
+
+/*snow at top of screen*/
+
+.svg-snowscene {
+	width: 100%;
+}
+
+.snow {
+	fill: #fff;
+	animation-name: snowing;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-out;
+
+	&:nth-child(2n) {
+		animation-delay: 1.5s;
+	}
+
+	&:nth-child(3n) {
+		animation-delay: 2.3s;
+		animation-duration: 3.3s;
+	}
+
+	&:nth-child(4n) {
+		animation-delay: 0.8s;
+		animation-duration: 3.2s;
+	}
+
+	&:nth-child(5n) {
+		animation-delay: 2.8s;
+	}
+}
+
+@keyframes snowing {
+	0% {
+		fill-opacity: 1;
+	}
+
+	100% {
+		fill-opacity: 0;
+		transform: translateY(200px);
+	}
+}
+
+/*frontend mentor challenge*/
+
+h1 {
+	font-weight: 200;
+	margin: 1rem 0 0.4rem;
+	font-size: 1.85rem;
+	color: azure;
+}
+
+h2 {
+	font-size: 1.85rem;
+}
+
+h3 {
+	color: var(--very-dark-blue);
+}
+
+footer {
+	margin: 0.5rem;
+	padding: .5rem;
+}
+
+.header {
+	margin-top: 5rem;
+}
+
+.header h2 {
+	text-shadow: 0.5px 1px 11px #fff;
+}
+
+.header p {
+	margin: 1rem auto 2rem auto;
+	font-size: 0.8rem;
+	max-width: 400px;
+	color: #e8e8e8;
+}
+
+.card-container {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.card {
+	padding: 1.5rem;
+	box-shadow: 2px 5px 16px 3px rgba(0, 0, 0, 0.5);
+	margin: 0.5rem 1rem 0.5rem;
+	max-width: 20rem;
+	text-align: left;
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	border-radius: 7px;
+}
+
+.card p {
+	font-size: .8rem;
+	font-weight: 400;
+	margin: 0.8rem 0;
+	color: #495464;
+}
+
+.card img {
+	width: 20%;
+	margin-left: auto;
+	padding: 1.5rem 0 0.5rem 0;
+}
+
+.cyan {
+	border-top: 4.5px solid var(--cyan);
+	margin-bottom: 0;
+}
+
+.red {
+	border-top: 4.5px solid var(--red);
+}
+
+.orange {
+	border-top: 4.5px solid var(--orange);
+}
+
+.blue {
+	border-top: 4.5px solid var(--blue);
+	margin-top: 0;
+}
+
+.attribution {
+	margin: 0 auto;
+	font-size: .8rem;
+	text-align: center;
+	color: #fff;
+	max-width: 80%;
+}
+
+.attribution a {
+	text-decoration: none;
+}
+
+.blinking {
+	animation: blinkingText 2s ease infinite;
+}
+
+@keyframes blinkingText {
+	0% {
+		color: lightyellow;
+	}
+
+	25% {
+		color: orange;
+	}
+
+	50% {
+		color: orangered;
+	}
+
+	75% {
+		color: darkgreen;
+	}
+
+	100% {
+		color: red;
+	}
+}
+
+
+/*fireworks styling*/
+
+canvas {
+	margin: 0 auto;
+	width: 100%;
+	top: 10%;
+	cursor: crosshair;
+	position: absolute;
+	z-index: -1;
+	display: block;
+}
+
+
+/*responsiveness*/
+
+@media only screen and (min-width: 1440px) {
+	.orange {
+		margin-top: 2rem;
+	}
+
+	.card-container {
+		flex-direction: row;
+	}
+
+	canvas {
+		top: 0;
+	}
+
+	svg {
+		width: 350px;
+		height: 400px;
+	}
+}
+
+
+/*father christmas in the clouds*/
+
+.container {
+	height: 280px;
+	width: 150px;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-60%, -50%);
+	position: absolute;
+	top: 15%;
+	left: 25%;
+	z-index: -10;
+}
+
+svg {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.plane {
+	position: relative;
+	-webkit-animation: float 3s infinite;
+	animation: float 3s infinite;
+}
+
+@-webkit-keyframes float {
+	50% {
+		-webkit-transform: translateY(25px);
+		transform: translateY(25px);
+	}
+}
+
+@keyframes float {
+	50% {
+		-webkit-transform: translateY(25px);
+		transform: translateY(25px);
+	}
+}
+
+.hand {
+	-webkit-transform: rotate(10deg);
+	-ms-transform: rotate(10deg);
+	transform: rotate(10deg);
+	-webkit-animation: wave 1.5s infinite;
+	animation: wave 1.5s infinite;
+	-webkit-transform-origin: center;
+	-ms-transform-origin: center;
+	transform-origin: center;
+}
+
+.blade {
+	-webkit-animation: spin 1s infinite linear;
+	animation: spin 1s infinite linear;
+	-webkit-transform-origin: 50% 54%;
+	-ms-transform-origin: 50% 54%;
+	transform-origin: 50% 54%;
+}
+
+@-webkit-keyframes spin {
+	100% {
+		-webkit-transform: rotateX(360deg);
+		transform: rotateX(360deg);
+	}
+}
+
+@keyframes spin {
+	100% {
+		-webkit-transform: rotateX(360deg);
+		transform: rotateX(360deg);
+	}
+}
+
+@-webkit-keyframes wave {
+	50% {
+		-webkit-transform: rotate(-10deg);
+		transform: rotate(-10deg);
+	}
+}
+
+@keyframes wave {
+	50% {
+		-webkit-transform: rotate(-10deg);
+		transform: rotate(-10deg);
+	}
+}
+
+
+/*xmas icons at bottom of the screen*/
+
+.text {
+	color: var(--background);
+	display: inline;
+	font-size: 3em;
+	text-shadow: var(--backgroundShadow), var(--textshadow);
+	padding: 30px;
+}
+
+
+/*Happy Christmas message*/
+
+.xmas-msg {
+	-webkit-transform: translate(-50, -50%);
+	-moz-transform: translate(-50, -50%);
+	-ms-transform: translate(-50, -50%);
+	transform: translate(-50, -50%);
+	text-align: center;
+	pointer-events: none;
+	-webkit-user-select: none;
+	user-select: none;
+	margin: 0.5rem 0 2rem;
+}
+
+
+.xmas-msg h2 {
+	font-family: 'Codystar', cursive;
+	color: #fff;
+	font-weight: 400;
+	font-size: 3rem;
+}
+
